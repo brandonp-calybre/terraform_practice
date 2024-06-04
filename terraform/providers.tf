@@ -8,12 +8,12 @@ terraform {
         }
     }
 
-    # Setup the backend to store the state file
+    # Setup the backend to store the state files
     backend "azurerm" {
-        resource_group_name   = "rg-terraform-state"
-        storage_account_name  = "stterraformstate"
-        container_name        = "tfstate"
-        key                   = "terraform.tfstate"
+        resource_group_name   = "san-calybackend-rg"        # The name of the resource group
+        storage_account_name  = "san-calybackend-blob"      # The name of the storage account
+        container_name        = "tfstate"                   # The name of the container in the storage account
+        key                   = "terraform.tfstate"         # The name of the state file in the container
     }
 }
 
